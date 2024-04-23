@@ -94,6 +94,7 @@
     home-manager
     gnumake
     unzip
+    nodejs_20
     ripgrep
     rofi-wayland
 
