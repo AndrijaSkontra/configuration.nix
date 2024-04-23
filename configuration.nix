@@ -90,6 +90,7 @@
     wget
     gcc
     swww
+    oh-my-posh
     home-manager
     gnumake
     unzip
@@ -147,7 +148,7 @@
   services.blueman.enable = true;
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    nerdfonts
   ];
 
   system.stateVersion = "23.11";
