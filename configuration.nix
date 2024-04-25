@@ -88,14 +88,18 @@
 
   environment.systemPackages = with pkgs; [
     wget
+    fd
     gcc
     swww
     oh-my-posh
     home-manager
+    sqlite
+    nodePackages."@angular/cli"
     gnumake
     unzip
     nodejs_20
     ripgrep
+    tmuxinator
     rofi-wayland
 
     (waybar.overrideAttrs (oldAttrs: {
