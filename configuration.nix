@@ -101,6 +101,7 @@
     ripgrep
     tmuxinator
     rofi-wayland
+    keyd
 
     (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
@@ -131,9 +132,27 @@
 
   services.keyd = {
     enable = true;
-    keyboards.default.settings.main = {
-      capslock = "overload(control, esc)";
-      esc = "capslock";
+    keyboards.default = {
+      # settings = {
+      #   main = {
+      #     capslock = "overload(control, esc)";
+      #     esc = "capslock";
+      #     leftalt = "layer(nav)";
+      #   };
+      #   nav = {
+      #     comma = "-";
+      #     dot = "=";
+      #   };
+      # };
+      extraConfig = ''
+        [main]
+        capslock = overload(control, esc)
+        esc = capslock
+        leftalt = layer(cool)
+        [cool:A]
+        . = equal
+        , = minus
+      '';
     };
   };
 
